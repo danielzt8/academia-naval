@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Naval | República Dominicana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"DM Serif Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e3a8a',
+                            900: '#0f172a', // Azul casi negro
+                            950: '#020617',
+                        },
+                        gold: {
+                            500: '#eab308',
+                            600: '#ca8a04',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <!-- Top Bar -->
+        <div class="bg-navy-900 text-white text-xs py-2 hidden md:block">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex gap-4">
+                    <span class="flex items-center gap-1"><ion-icon name="call"></ion-icon> (809) 555-0123</span>
+                    <span class="flex items-center gap-1"><ion-icon name="mail"></ion-icon>
+                        contacto@academianaval.edu.do</span>
+                </div>
+                <div class="flex gap-4 uppercase tracking-widest font-bold text-[10px]">
+                    <a href="#" class="hover:text-gold-500">Intranet</a>
+                    <a href="#" class="hover:text-gold-500">Mapa del Sitio</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Branding & Mobile Toggle -->
+        <div class="container mx-auto px-4 py-3">
+            <!-- Mobile View -->
+            <div class="flex justify-between items-center md:hidden">
+                <div class="flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg"
+                        alt="Logo Academia" class="h-12 w-auto">
+                    <div>
+                        <h1 class="font-serif text-navy-900 font-bold leading-none">Academia Naval</h1>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-wide">República Dominicana</p>
+                    </div>
+                </div>
+                <button id="mobile-menu-button" class="text-navy-900 text-3xl focus:outline-none">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+            </div>
+
+            <!-- Desktop View -->
+            <div class="hidden md:flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png"
+                        alt="Escudo RD" class="h-12 w-auto">
+                    <div class="h-10 w-px bg-gray-300"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg"
+                        alt="Logo Academia" class="h-14 w-auto">
+                    <div class="flex flex-col ml-2">
+                        <h1 class="text-2xl font-serif font-bold text-navy-900 leading-none">Academia Naval</h1>
+                        <h2 class="text-sm font-bold text-navy-800 uppercase tracking-wide mt-0.5">César Augusto de
+                            Windt Lavandier</h2>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] mt-0.5">ARMADA DE
+                            REPÚBLICA DOMINICANA</p>
+                    </div>
+                </div>
+
+                <form action="busqueda.html"
+                    class="flex items-center bg-gray-100 rounded-full px-4 py-2 border border-gray-200 focus-within:border-navy-900 focus-within:ring-1 focus-within:ring-navy-900 transition-all">
+                    <ion-icon name="search-outline" class="text-gray-400 mr-2"></ion-icon>
+                    <input type="text" placeholder="Buscar..."
+                        class="bg-transparent text-sm focus:outline-none text-navy-900 placeholder-gray-500 w-48">
+                </form>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:block bg-navy-900 border-t-4 border-gold-500">
+            <div class="container mx-auto">
+                <ul class="flex justify-center">
+                    <li><a href="index.html"
+                            class="block text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">Inicio</a>
+                    </li>
+
+                    <li class="group relative">
+                        <a href="#"
+                            class="flex items-center gap-1 text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">
+                            La Academia <ion-icon name="chevron-down-outline" class="text-xs opacity-70"></ion-icon>
+                        </a>
+                        <ul
+                            class="absolute left-0 top-full bg-navy-900 w-48 shadow-xl hidden group-hover:block z-50 border-t-2 border-gold-500">
+                            <li><a href="#"
+                                    class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Historia</a>
+                            </li>
+                            <li><a href="#"
+                                    class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Misión
+                                    y Visión</a></li>
+                            <li><a href="#"
+                                    class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm">Directores</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="group relative">
+                        <a href="#"
+                            class="flex items-center gap-1 text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">
+                            Admisión <ion-icon name="chevron-down-outline" class="text-xs opacity-70"></ion-icon>
+                        </a>
+                        <ul
+                            class="absolute left-0 top-full bg-navy-900 w-56 shadow-xl hidden group-hover:block z-50 border-t-2 border-gold-500">
+                            <li><a href="#"
+                                    class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Requisitos
+                                    de Ingreso</a></li>
+                            <li><a href="#"
+                                    class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Oferta
+                                    Académica</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="articulos.html"
+                            class="block text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">Noticias</a>
+                    </li>
+
+                    <li><a href="contacto.html"
+                            class="block text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu"
+            class="hidden md:hidden bg-navy-900 text-white border-t-4 border-gold-500 absolute w-full z-50 shadow-xl">
+            <ul class="flex flex-col py-4 px-6 space-y-4 font-semibold">
+                <li><a href="index.html" class="block hover:text-gold-500">Inicio</a></li>
+                <li><a href="#" class="block hover:text-gold-500">La Academia</a></li>
+                <li><a href="#" class="block hover:text-gold-500">Admisión</a></li>
+                <li><a href="articulos.html" class="block hover:text-gold-500">Noticias</a></li>
+                <li><a href="contacto.html" class="block hover:text-gold-500">Contacto</a></li>
+                <li><a href="#"
+                        class="block bg-gold-600 text-navy-900 text-center py-2 rounded font-bold hover:bg-gold-500 transition-colors">Inscripción</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-12 bg-gray-50 relative overflow-hidden min-h-[60vh]">
+        <div class="absolute inset-0 z-0 opacity-5 pointer-events-none">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg"
+                class="w-full h-full object-cover grayscale">
+        </div>
+
+        <div class="text-center max-w-lg relative z-10">
+            <div class="text-9xl font-bold text-navy-900 font-serif leading-none select-none opacity-10">404</div>
+            <div class="-mt-16 mb-6">
+                <ion-icon name="alert-circle-outline" class="text-7xl text-gold-500"></ion-icon>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold text-navy-900 mt-2 mb-6 font-serif tracking-tight">Página no
+                encontrada</h1>
+            <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                Lo sentimos, la página que estás buscando no existe o ha sido movida.
+                Parece que has navegado hacia aguas desconocidas.
+            </p>
+
+            <a href="index.html"
+                class="inline-flex items-center gap-2 bg-navy-900 text-white font-bold py-4 px-10 rounded shadow-xl hover:bg-gold-500 hover:text-navy-900 transition-all transform hover:-translate-y-1 tracking-wider uppercase text-sm">
+                <ion-icon name="home"></ion-icon>
+                Volver al Inicio
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-white pt-16 pb-8 border-t border-navy-900">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg"
+                        alt="Logo" class="h-16 w-auto">
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-gold-500">Academia Naval</h4>
+                        <p class="text-xs text-gray-400 uppercase tracking-wider">República Dominicana</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-md">
+                    Formando oficiales con honor, ciencia y virtud para la defensa de nuestra soberanía nacional.
+                    Tradición naval de excelencia al servicio de la patria.
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h5 class="font-bold text-gold-500 mb-4 uppercase text-sm tracking-wider">Enlaces Rápidos</h5>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Aula Virtual</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Transparencia</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Reglamentos</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h5 class="font-bold text-gold-500 mb-4 uppercase text-sm tracking-wider">Contacto</h5>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li class="flex items-start gap-2"><ion-icon name="location" class="mt-1 text-gold-600"></ion-icon>
+                        Av. España, Sans Soucí, Santo Domingo Este</li>
+                    <li class="flex items-center gap-2"><ion-icon name="call" class="text-gold-600"></ion-icon> (809)
+                        555-0123</li>
+                    <li class="flex items-center gap-2"><ion-icon name="mail" class="text-gold-600"></ion-icon>
+                        info@academianaval.edu.do</li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="container mx-auto px-4 border-t border-navy-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>&copy; 2025 Academia Naval. Todos los derechos reservados.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Política de Privacidad</a>
+                <a href="#" class="hover:text-white">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed top-1/2 right-0 -translate-y-1/2 z-50 flex flex-col gap-2 items-end">
+        <a href="#"
+            class="group flex items-center justify-end w-12 h-12 bg-navy-900 text-white rounded-l-lg hover:bg-pink-600 hover:w-36 transition-all duration-300 shadow-lg overflow-hidden relative">
+            <span
+                class="absolute left-4 opacity-0 group-hover:opacity-100 transition-opacity font-bold whitespace-nowrap text-xs">Instagram</span>
+            <div class="w-12 h-12 flex items-center justify-center absolute right-0 min-w-[3rem]">
+                <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
+            </div>
+        </a>
+        <a href="#"
+            class="group flex items-center justify-end w-12 h-12 bg-navy-900 text-white rounded-l-lg hover:bg-blue-600 hover:w-36 transition-all duration-300 shadow-lg overflow-hidden relative">
+            <span
+                class="absolute left-4 opacity-0 group-hover:opacity-100 transition-opacity font-bold whitespace-nowrap text-xs">Facebook</span>
+            <div class="w-12 h-12 flex items-center justify-center absolute right-0 min-w-[3rem]">
+                <ion-icon name="logo-facebook" class="text-xl"></ion-icon>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
