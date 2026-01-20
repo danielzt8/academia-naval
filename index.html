@@ -13,27 +13,27 @@
     rel="stylesheet">
 
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['"DM Serif Display"', 'serif'],
-            sans: ['"Inter"', 'sans-serif'],
-          },
-          colors: {
-            navy: {
-              800: '#1e3a8a',
-              900: '#0f172a', // Azul casi negro
-              950: '#020617',
-            },
-            gold: {
-              500: '#eab308',
-              600: '#ca8a04',
-            }
-          }
+   tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        serif: ['"DM Serif Display"', 'serif'],
+        sans: ['"Inter"', 'sans-serif'],
+      },
+      colors: {
+        navy: {
+          800: '#0f172a',
+          900: '#050a14', // Azul profundo "Deep Sea"
+          950: '#02040a',
+        },
+        gold: {
+          500: '#c5a059', // Dorado más mate/elegante
+          600: '#a38241',
         }
       }
     }
+  }
+}
   </script>
   <style>
     .scrollbar-hide::-webkit-scrollbar {
@@ -197,116 +197,79 @@
     </nav>
   </header>
 
-  <!-- Hero Slider -->
-  <section class="bg-navy-900 relative">
-    <div x-data="{ activeSlide: 0, slides: 3, timer: null }"
-      x-init="timer = setInterval(() => activeSlide = (activeSlide + 1) % slides, 5000)"
-      class="w-full relative group h-[50vh] md:h-[70vh] lg:h-[85vh]">
+<section class="relative bg-navy-900 min-h-[80vh] flex items-center overflow-hidden">
+  <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/stardust.png');"></div>
+  <div class="absolute top-20 left-10 text-gold-500/20 font-mono text-xs hidden lg:block">
+    18° 28' 35" N <br> 69° 52' 59" W
+  </div>
 
-      <div class="relative overflow-hidden w-full h-full">
-        <div class="flex transition-transform duration-700 ease-in-out h-full"
-          :style="`transform: translateX(-${activeSlide * 100}%)`">
-
-          <!-- Slide 1 -->
-          <div class="min-w-full h-full relative">
-            <img
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-              class="w-full h-full object-cover brightness-50">
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-              <span
-                class="bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest fade-in">Honor
-                y Tradición</span>
-              <h2 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg fade-in">Formando Oficiales
-                Navales</h2>
-              <p class="text-lg md:text-xl max-w-2xl text-gray-200 fade-in">Liderazgo, disciplina y excelencia académica
-                al servicio de la nación.</p>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="min-w-full h-full relative">
-            <img src="https://images.unsplash.com/photo-1577705998148-6da4f3963bc1?q=80&w=2070&auto=format&fit=crop"
-              class="w-full h-full object-cover brightness-50">
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-              <span
-                class="bg-white text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Excelencia
-                Académica</span>
-              <h2 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">Educación de Alto Nivel</h2>
-              <p class="text-lg md:text-xl max-w-2xl text-gray-200">Ciencias navales y formación integral para los
-                futuros líderes de la Armada.</p>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="min-w-full h-full relative">
-            <img
-              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-              class="w-full h-full object-cover brightness-50">
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-              <h2 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">Defensa de la Soberanía</h2>
-              <p class="text-lg md:text-xl max-w-2xl text-gray-200">Preparamos a los guardianes de nuestras costas con
-                honor y patriotismo.</p>
-            </div>
-          </div>
-        </div>
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="text-white">
+      <span class="inline-block px-4 py-1 border border-gold-500 text-gold-500 text-xs font-bold tracking-widest uppercase mb-6">
+        Excelencia en el Mar
+      </span>
+      <h2 class="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6">
+        Forjando el <span class="text-gold-500">Liderazgo</span> de nuestra Armada
+      </h2>
+      <p class="text-lg text-gray-400 max-w-lg mb-8 leading-relaxed">
+        Institución líder en la formación integral de oficiales navales, combinando la tradición militar con la innovación académica de vanguardia.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#" class="bg-gold-600 hover:bg-gold-500 text-navy-900 px-8 py-4 rounded-sm font-bold transition-all transform hover:-translate-y-1">
+          Admisiones 2025
+        </a>
+        <a href="#" class="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-sm font-bold transition-all">
+          Nuestra Historia
+        </a>
       </div>
-
-      <button @click="activeSlide = (activeSlide - 1 + slides) % slides; clearInterval(timer)"
-        class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/10 hover:bg-white/30 backdrop-blur-md rounded-full p-3 text-white transition-all border border-white/20"><ion-icon
-          name="chevron-back" size="large"></ion-icon></button>
-      <button @click="activeSlide = (activeSlide + 1) % slides; clearInterval(timer)"
-        class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/10 hover:bg-white/30 backdrop-blur-md rounded-full p-3 text-white transition-all border border-white/20"><ion-icon
-          name="chevron-forward" size="large"></ion-icon></button>
     </div>
-  </section>
-
-  <!-- Floating Cards Section -->
-  <section class="relative -mt-20 z-20 px-4 mb-20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div
-        class="bg-white rounded-xl shadow-xl p-8 border-t-4 border-gold-500 transform hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 bg-navy-50 rounded-lg flex items-center justify-center mb-6 text-navy-900">
-          <ion-icon name="school-outline" class="text-3xl"></ion-icon>
-        </div>
-        <h3 class="text-2xl font-serif font-bold text-navy-900 mb-3">Programa Académico</h3>
-        <p class="text-gray-500 mb-6 line-clamp-3">Licenciatura en Ciencias Navales con un currículo integral para
-          oficiales de comando.</p>
-        <a href="#" class="inline-flex items-center text-gold-600 font-bold hover:text-navy-900 transition-colors">Ver
-          pensum <ion-icon name="arrow-forward" class="ml-2"></ion-icon></a>
+    
+    <div class="relative hidden lg:block">
+      <div class="absolute -inset-4 border border-gold-500/30 translate-x-4 translate-y-4"></div>
+      <div class="relative h-[550px] overflow-hidden shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" 
+             class="w-full h-full object-cover" alt="Academia Naval">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
       </div>
-
-      <div
-        class="bg-navy-900 rounded-xl shadow-xl p-8 border-t-4 border-gold-500 transform md:-translate-y-4 hover:-translate-y-6 transition-transform duration-300 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-4 opacity-10">
-          <ion-icon name="medal-outline" class="text-9xl"></ion-icon>
-        </div>
-        <div class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center mb-6 text-gold-500 relative z-10">
-          <ion-icon name="person-add-outline" class="text-3xl"></ion-icon>
-        </div>
-        <h3 class="text-2xl font-serif font-bold text-white mb-3 relative z-10">Ingreso 2025</h3>
-        <p class="text-gray-300 mb-6 line-clamp-3 relative z-10">Únete a la prestigiosa Academia Naval. Conoce los
-          requisitos y fechas de evaluación.</p>
-        <a href="#"
-          class="inline-flex items-center text-white font-bold bg-gold-600 hover:bg-gold-500 px-4 py-2 rounded-lg transition-colors relative z-10">Aplicar
-          ahora</a>
-      </div>
-
-      <div
-        class="bg-white rounded-xl shadow-xl p-8 border-t-4 border-gold-500 transform hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 bg-navy-50 rounded-lg flex items-center justify-center mb-6 text-navy-900">
-          <ion-icon name="book-outline" class="text-3xl"></ion-icon>
-        </div>
-        <h3 class="text-2xl font-serif font-bold text-navy-900 mb-3">Cuerpo de Cadetes</h3>
-        <p class="text-gray-500 mb-6 line-clamp-3">Conoce la estructura, disciplina y vida diaria de nuestros damas y
-          caballeros guardiamarinas.</p>
-        <a href="#" class="inline-flex items-center text-gold-600 font-bold hover:text-navy-900 transition-colors">Saber
-          más <ion-icon name="arrow-forward" class="ml-2"></ion-icon></a>
-      </div>
-
     </div>
-  </section>
+  </div>
+</section>
 
+<section class="relative -mt-16 z-30 px-4 mb-20">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-0 shadow-2xl rounded-sm overflow-hidden">
+    
+    <div class="bg-white p-10 border-r border-gray-100 group hover:bg-navy-900 transition-colors duration-500">
+      <div class="text-gold-600 mb-6 group-hover:text-gold-500">
+        <ion-icon name="compass-outline" class="text-5xl"></ion-icon>
+      </div>
+      <h3 class="text-xl font-bold text-navy-900 group-hover:text-white mb-4">Carrera Naval</h3>
+      <p class="text-gray-500 group-hover:text-gray-400 text-sm mb-6">Licenciatura en Ciencias Navales con menciones especializadas para el mando.</p>
+      <a href="#" class="text-gold-600 font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+        Explorar <ion-icon name="arrow-forward"></ion-icon>
+      </a>
+    </div>
+
+    <div class="bg-gold-500 p-10 flex flex-col justify-center">
+      <h3 class="text-2xl font-serif font-bold text-navy-900 mb-2">Damas y Caballeros</h3>
+      <p class="text-navy-900/80 mb-6">Conoce la vida del guardiamarina y nuestra formación en valores.</p>
+      <button class="bg-navy-900 text-white py-3 px-6 text-sm font-bold hover:bg-navy-800 transition-all">
+        Ver Vida Académica
+      </button>
+    </div>
+
+    <div class="bg-white p-10 group hover:bg-navy-900 transition-colors duration-500">
+      <div class="text-gold-600 mb-6 group-hover:text-gold-500">
+        <ion-icon name="ribbon-outline" class="text-5xl"></ion-icon>
+      </div>
+      <h3 class="text-xl font-bold text-navy-900 group-hover:text-white mb-4">Postgrado</h3>
+      <p class="text-gray-500 group-hover:text-gray-400 text-sm mb-6">Especializaciones y cursos superiores para oficiales en servicio activo.</p>
+      <a href="#" class="text-gold-600 font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+        Ver Oferta <ion-icon name="arrow-forward"></ion-icon>
+      </a>
+    </div>
+
+  </div>
+</section>
   <!-- Director's Message Section -->
   <section class="py-16 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
@@ -606,6 +569,35 @@
       }
     });
   </script>
+
+  <!-- script del boton para subir  -->
+   
+
+  <button id="scrollToTop" class="fixed bottom-8 left-8 z-50 bg-gold-600 text-navy-900 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center opacity-0 transition-opacity duration-300 hover:bg-gold-500 focus:outline-none">
+  <ion-icon name="arrow-up-outline" class="text-2xl font-bold"></ion-icon>
+</button>
+
+<script>
+  const scrollTopBtn = document.getElementById('scrollToTop');
+
+  // Mostrar el botón cuando se baja 300px
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollTopBtn.classList.replace('opacity-0', 'opacity-100');
+    } else {
+      scrollTopBtn.classList.replace('opacity-100', 'opacity-0');
+    }
+  };
+
+  // Función para subir suavemente
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
 </body>
+
 
 </html>
