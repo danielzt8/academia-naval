@@ -1,289 +1,178 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Academia Naval</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Academia Naval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <script>
-   tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        serif: ['"DM Serif Display"', 'serif'],
-        sans: ['"Inter"', 'sans-serif'],
-      },
-      colors: {
-        navy: {
-          500: '#2e5a9e', // Azul claro "Cielo"
-          800: '#1e4079', // Azul intermedio
-          900: '#003366', // Azul Institucional (Royal Navy Blue)
-          950: '#001a3d', // Azul oscuro profundo
-        },
-        gold: {
-          500: '#d4af37', // Dorado metálico clásico
-          600: '#b8860b', // Dorado oscuro
-        },
-        red: {
-          600: '#ce1126' // Rojo dominicano
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              50: '#f0f4f9',
+              100: '#dbe5f2',
+              500: '#2e5a9e',
+              800: '#1e4079',
+              900: '#0a192f',
+              950: '#020c1b',
+            },
+            gold: {
+              400: '#fbbf24',
+              500: '#d4af37',
+              600: '#b8860b',
+              700: '#926a09',
+            },
+          }
         }
       }
     }
-  }
-}
-   </script>
-    <style>
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a192f; }
+    ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #b8860b; }
+    .glass-nav { background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(10px); }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-800 font-sans selection:bg-gold-500 selection:text-white flex flex-col min-h-screen">
 
-  <header class="bg-white shadow-md sticky top-0 z-40">
-    <!-- Top Bar -->
-    <div class="bg-navy-900 text-white text-xs py-2 hidden md:block">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <div class="flex gap-4">
-          <span class="flex items-center gap-1"><ion-icon name="call"></ion-icon> (809) 555-0123</span>
-          <span class="flex items-center gap-1"><ion-icon name="mail"></ion-icon> contacto@academianaval.edu.do</span>
-        </div>
-        <div class="flex gap-4 uppercase tracking-widest font-bold text-[10px]">
-          <a href="#" class="hover:text-gold-500">Intranet</a>
-          <a href="#" class="hover:text-gold-500">Mapa del Sitio</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Branding & Mobile Toggle -->
-    <div class="container mx-auto px-4 py-3">
-      <!-- Mobile View -->
-      <div class="flex justify-between items-center md:hidden">
-        <div class="flex items-center gap-2">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg"
-            alt="Logo Academia" class="h-12 w-auto">
-          <div>
-            <h1 class="font-serif text-navy-900 font-bold leading-none">Academia Naval</h1>
-            <p class="text-[10px] text-gray-500 uppercase tracking-wide">República Dominicana</p>
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-nav shadow-lg py-2">
+    <div class="container mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-4 group">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg" alt="Logo" class="h-12 w-auto drop-shadow-lg transition-transform hover:scale-105">
+          <div class="hidden md:block">
+            <h1 class="text-white font-serif font-bold text-lg leading-none tracking-wide">ACADEMIA NAVAL</h1>
+            <p class="text-gold-500 text-[10px] uppercase tracking-[0.2em] font-medium">República Dominicana</p>
           </div>
-        </div>
-        <button id="mobile-menu-button" class="text-navy-900 text-3xl focus:outline-none">
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Inicio</a>
+          <a href="#" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Institución</a>
+          <a href="articulos.html" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Noticias</a>
+          <a href="contacto.html" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Contacto</a>
+          <a href="#" class="px-6 py-2 bg-gradient-to-r from-gold-600 to-gold-400 text-navy-950 text-xs font-bold uppercase tracking-wider rounded-sm hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all transform hover:-translate-y-0.5">
+            Admisiones
+          </a>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button id="mobile-menu-button" class="md:hidden text-white text-3xl">
           <ion-icon name="menu-outline"></ion-icon>
         </button>
       </div>
-
-      <!-- Desktop View -->
-      <div class="hidden md:flex justify-between items-center">
-        <div class="flex items-center gap-4">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png"
-            alt="Escudo RD" class="h-12 w-auto">
-          <div class="h-10 w-px bg-gray-300"></div>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg"
-            alt="Logo Academia"
-            class="h-14 w-auto drop-shadow-sm group-hover:scale-105 transition transform duration-300">
-          <div class="flex flex-col ml-2">
-            <h1 class="text-2xl font-serif font-bold text-navy-900 leading-none">Academia Naval</h1>
-            <h2 class="text-sm font-bold text-navy-800 uppercase tracking-wide mt-0.5">César Augusto de Windt Lavandier
-            </h2>
-            <p class="text-[10px] text-navy-900 font-bold uppercase tracking-[0.2em] mt-0.5">ARMADA DE REPÚBLICA
-              DOMINICANA</p>
-          </div>
-        </div>
-
-        <form action="busqueda.html"
-          class="flex items-center bg-gray-100 rounded-full px-4 py-2 border border-gray-200 focus-within:border-navy-900 focus-within:ring-1 focus-within:ring-navy-900 transition-all">
-          <ion-icon name="search-outline" class="text-gray-400 mr-2"></ion-icon>
-          <input type="text" placeholder="Buscar..."
-            class="bg-transparent text-sm focus:outline-none text-navy-900 placeholder-gray-500 w-48">
-        </form>
-      </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="hidden md:block bg-navy-900 border-t-4 border-gold-500">
-      <div class="container mx-auto">
-        <ul class="flex justify-center">
-          <li><a href="index.html"
-              class="block text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">Inicio</a>
-          </li>
-
-          <li class="group relative">
-            <a href="#"
-              class="flex items-center gap-1 text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">
-              La Academia <ion-icon name="chevron-down-outline" class="text-xs opacity-70"></ion-icon>
-            </a>
-            <ul
-              class="absolute left-0 top-full bg-navy-900 w-48 shadow-xl hidden group-hover:block z-50 border-t-2 border-gold-500">
-              <li><a href="#"
-                  class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Historia</a>
-              </li>
-              <li><a href="#"
-                  class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Misión
-                  y Visión</a></li>
-              <li><a href="#"
-                  class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm">Directores</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="group relative">
-            <a href="#"
-              class="flex items-center gap-1 text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">
-              Admisión <ion-icon name="chevron-down-outline" class="text-xs opacity-70"></ion-icon>
-            </a>
-            <ul
-              class="absolute left-0 top-full bg-navy-900 w-56 shadow-xl hidden group-hover:block z-50 border-t-2 border-gold-500">
-              <li><a href="#"
-                  class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Requisitos
-                  de Ingreso</a></li>
-              <li><a href="#"
-                  class="block text-white px-6 py-3 hover:bg-navy-800 hover:text-gold-500 transition-colors text-sm border-b border-navy-800">Oferta
-                  Académica</a></li>
-            </ul>
-          </li>
-
-          <li><a href="articulos.html"
-              class="block text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">Noticias</a>
-          </li>
-
-          <li><a href="contacto.html"
-              class="block text-white font-semibold px-6 py-4 hover:bg-navy-800 transition-colors border-b-2 border-transparent hover:border-gold-500">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <nav id="mobile-menu"
-      class="hidden md:hidden bg-navy-900 text-white border-t-4 border-gold-500 absolute w-full z-50 shadow-xl">
-      <ul class="flex flex-col py-4 px-6 space-y-4 font-semibold">
-        <li><a href="index.html" class="block hover:text-gold-500">Inicio</a></li>
-        <li><a href="#" class="block hover:text-gold-500">La Academia</a></li>
-        <li><a href="#" class="block hover:text-gold-500">Admisión</a></li>
-        <li><a href="articulos.html" class="block hover:text-gold-500">Noticias</a></li>
-        <li><a href="contacto.html" class="block hover:text-gold-500">Contacto</a></li>
-        <li><a href="#"
-            class="block bg-gold-600 text-navy-900 text-center py-2 rounded font-bold hover:bg-gold-500 transition-colors">Inscripción</a>
-        </li>
-      </ul>
-    </nav>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-navy-950/95 backdrop-blur-xl z-50 hidden flex flex-col items-center justify-center space-y-8 transition-opacity duration-300">
+      <button id="close-menu" class="absolute top-8 right-8 text-white text-4xl hover:text-gold-500">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <a href="index.html" class="text-2xl text-white font-serif hover:text-gold-500">Inicio</a>
+      <a href="#" class="text-2xl text-white font-serif hover:text-gold-500">Institución</a>
+      <a href="articulos.html" class="text-2xl text-white font-serif hover:text-gold-500">Noticias</a>
+      <a href="contacto.html" class="text-2xl text-white font-serif hover:text-gold-500">Contacto</a>
+    </div>
   </header>
 
-    <!-- Page Header -->
-    <div class="bg-navy-900 text-white py-12 border-b-4 border-gold-500 relative overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-10">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg" class="w-full h-full object-cover">
-        </div>
-        <div class="container mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-4xl md:text-5xl font-serif font-bold mb-2">Contacto</h1>
-            <p class="text-gray-300 text-lg">Estamos aquí para servirle. Comuníquese con nosotros.</p>
-        </div>
-    </div>
+   <!-- Inner Page Hero -->
+  <section class="relative pt-32 pb-20 bg-navy-900 border-b-4 border-gold-500 overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-navy-950/90 to-navy-900/50"></div>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+          <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-2">Contacto</h1>
+          <div class="w-16 h-1 bg-gold-500 mx-auto mb-4"></div>
+          <p class="text-gray-300 text-sm uppercase tracking-widest">Estamos para servirle</p>
+      </div>
+  </section>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-6 py-16">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
-            <!-- Contact Info & Map -->
+            <!-- Contact Info -->
             <div class="space-y-8">
-                <!-- Info Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-gold-500">
-                    <h2 class="text-2xl font-serif font-bold text-navy-900 mb-6">Información de Contacto</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-navy-50 p-3 rounded-full text-navy-900">
-                                <ion-icon name="location" class="text-2xl"></ion-icon>
+                <div class="bg-white p-8 rounded-sm shadow-xl border-t-4 border-navy-900">
+                     <h2 class="text-2xl font-serif font-bold text-navy-900 mb-8">Información de Contacto</h2>
+                     <div class="space-y-8">
+                        <div class="flex items-start gap-6 group">
+                            <div class="w-12 h-12 bg-navy-50 rounded-full flex items-center justify-center text-navy-900 text-xl group-hover:bg-navy-900 group-hover:text-gold-500 transition-colors">
+                                <ion-icon name="location"></ion-icon>
                             </div>
                             <div>
-                                <h3 class="font-bold text-navy-900">Dirección</h3>
+                                <h3 class="font-bold text-navy-900 uppercase tracking-wider text-xs mb-2">Dirección</h3>
                                 <p class="text-gray-600">Av. España, Sans Soucí,<br>Santo Domingo Este, República Dominicana</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="bg-navy-50 p-3 rounded-full text-navy-900">
-                                <ion-icon name="call" class="text-2xl"></ion-icon>
+                        <div class="flex items-start gap-6 group">
+                            <div class="w-12 h-12 bg-navy-50 rounded-full flex items-center justify-center text-navy-900 text-xl group-hover:bg-navy-900 group-hover:text-gold-500 transition-colors">
+                                <ion-icon name="call"></ion-icon>
                             </div>
                             <div>
-                                <h3 class="font-bold text-navy-900">Teléfono</h3>
+                                <h3 class="font-bold text-navy-900 uppercase tracking-wider text-xs mb-2">Teléfono</h3>
                                 <p class="text-gray-600">(809) 555-0123</p>
-                                <p class="text-gray-500 text-sm">Lunes a Viernes, 8:00 AM - 4:00 PM</p>
+                                <p class="text-gray-500 text-xs">Lunes a Viernes, 8:00 AM - 4:00 PM</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="bg-navy-50 p-3 rounded-full text-navy-900">
-                                <ion-icon name="mail" class="text-2xl"></ion-icon>
+                        <div class="flex items-start gap-6 group">
+                             <div class="w-12 h-12 bg-navy-50 rounded-full flex items-center justify-center text-navy-900 text-xl group-hover:bg-navy-900 group-hover:text-gold-500 transition-colors">
+                                <ion-icon name="mail"></ion-icon>
                             </div>
                             <div>
-                                <h3 class="font-bold text-navy-900">Correo Electrónico</h3>
+                                <h3 class="font-bold text-navy-900 uppercase tracking-wider text-xs mb-2">Correo Electrónico</h3>
                                 <p class="text-gray-600">info@academianaval.edu.do</p>
                                 <p class="text-gray-600">admisiones@academianaval.edu.do</p>
                             </div>
                         </div>
-                    </div>
+                     </div>
                 </div>
 
                 <!-- Map -->
-                <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md h-64 md:h-80 relative">
+                <div class="bg-gray-200 rounded-sm overflow-hidden shadow-xl h-64 md:h-80 relative border-4 border-white">
                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.576061386926!2d-69.86607868510842!3d18.457388987445772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf87dd887295d9%3A0x673418516004926!2sAcademia%20Naval%20Vicealmirante%20Cesar%20A.%20De%20Windt%20Lavandier%2C%20ARD!5e0!3m2!1ses!2sdo!4v1679000000000!5m2!1ses!2sdo" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-                <h2 class="text-2xl font-serif font-bold text-navy-900 mb-2">Envíanos un Mensaje</h2>
-                <p class="text-gray-500 mb-8">Complete el formulario y nos pondremos en contacto con usted a la brevedad.</p>
+            <!-- Form -->
+            <div class="bg-white p-10 rounded-sm shadow-2xl">
+                 <h2 class="text-3xl font-serif font-bold text-navy-900 mb-4">Envíanos un Mensaje</h2>
+                 <p class="text-gray-500 mb-8 text-sm">Complete el formulario y nos pondremos en contacto con usted a la brevedad.</p>
 
-                <form class="space-y-6">
+                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="nombre" class="block text-sm font-bold text-navy-900 mb-2">Nombre Completo</label>
-                            <input type="text" id="nombre" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-colors" placeholder="Su nombre">
+                            <label for="nombre" class="block text-xs font-bold text-navy-900 mb-2 uppercase tracking-wider">Nombre Completo</label>
+                            <input type="text" id="nombre" class="w-full px-4 py-3 rounded-sm bg-gray-50 border border-gray-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all placeholder-gray-400" placeholder="Su nombre">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-bold text-navy-900 mb-2">Correo Electrónico</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-colors" placeholder="ejemplo@correo.com">
+                            <label for="email" class="block text-xs font-bold text-navy-900 mb-2 uppercase tracking-wider">Correo Electrónico</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-sm bg-gray-50 border border-gray-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all placeholder-gray-400" placeholder="ejemplo@correo.com">
                         </div>
                     </div>
 
                     <div>
-                        <label for="asunto" class="block text-sm font-bold text-navy-900 mb-2">Asunto</label>
-                        <select id="asunto" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-colors bg-white">
+                        <label for="asunto" class="block text-xs font-bold text-navy-900 mb-2 uppercase tracking-wider">Asunto</label>
+                        <select id="asunto" class="w-full px-4 py-3 rounded-sm bg-gray-50 border border-gray-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all text-gray-600">
                             <option value="">Seleccione un motivo</option>
                             <option value="admision">Información de Admisión</option>
                             <option value="academico">Asuntos Académicos</option>
@@ -293,107 +182,61 @@
                     </div>
 
                     <div>
-                        <label for="mensaje" class="block text-sm font-bold text-navy-900 mb-2">Mensaje</label>
-                        <textarea id="mensaje" rows="4" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-colors" placeholder="Escriba su mensaje aquí..."></textarea>
+                        <label for="mensaje" class="block text-xs font-bold text-navy-900 mb-2 uppercase tracking-wider">Mensaje</label>
+                        <textarea id="mensaje" rows="5" class="w-full px-4 py-3 rounded-sm bg-gray-50 border border-gray-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all placeholder-gray-400" placeholder="Escriba su mensaje aquí..."></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-navy-900 text-white font-bold py-4 rounded shadow-md hover:bg-gold-500 hover:text-navy-900 transition-all transform hover:-translate-y-1 uppercase tracking-wider text-sm flex justify-center items-center gap-2">
+                    <button type="submit" class="w-full bg-navy-900 text-white font-bold py-4 rounded-sm shadow-lg hover:bg-gold-500 hover:text-navy-900 transition-all transform hover:-translate-y-1 uppercase tracking-widest text-xs flex justify-center items-center gap-2">
                         <span>Enviar Mensaje</span>
                         <ion-icon name="send"></ion-icon>
                     </button>
                 </form>
             </div>
-
-        </div>
-    </main>
+       </div>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-navy-950 text-white pt-16 pb-8 border-t border-navy-900">
-    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-      <!-- Brand -->
-      <div class="col-span-1 md:col-span-2">
-        <div class="flex items-center gap-3 mb-6">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg"
-            class="h-16 w-auto">
-          <div>
-            <h4 class="font-serif text-xl font-bold text-gold-500">Judicatura Naval</h4>
-            <p class="text-xs text-gray-400 uppercase tracking-wider">República Dominicana</p>
-          </div>
-        </div>
-        <p class="text-gray-400 text-sm leading-relaxed max-w-md">
-          Formando oficiales con honor, ciencia y virtud para la defensa de nuestra soberanía nacional. Tradición naval
-          de excelencia al servicio de la patria.
-        </p>
-      </div>
-
-      <!-- Links -->
-      <div>
-        <h5 class="font-bold text-gold-500 mb-4 uppercase text-sm tracking-wider">Enlaces Rápidos</h5>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="#" class="hover:text-white transition-colors">Aula Virtual</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Transparencia</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Reglamentos</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h5 class="font-bold text-gold-500 mb-4 uppercase text-sm tracking-wider">Contacto</h5>
-        <ul class="space-y-3 text-sm text-gray-400">
-          <li class="flex items-start gap-2"><ion-icon name="location" class="mt-1 text-gold-600"></ion-icon> Av.
-            España, Sans Soucí, Santo Domingo Este</li>
-          <li class="flex items-center gap-2"><ion-icon name="call" class="text-gold-600"></ion-icon> (809) 555-0123
-          </li>
-          <li class="flex items-center gap-2"><ion-icon name="mail" class="text-gold-600"></ion-icon>
-            info@academianaval.edu.do</li>
-        </ul>
-      </div>
-    </div>
-
-    <div
-      class="container mx-auto px-4 border-t border-navy-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-      <p>&copy; 2025 Academia Naval. Todos los derechos reservados.</p>
-      <div class="flex gap-4 mt-4 md:mt-0">
-        <a href="#" class="hover:text-white">Política de Privacidad</a>
-        <a href="#" class="hover:text-white">Términos de Uso</a>
-      </div>
-    </div>
+  <footer class="bg-navy-950 text-white relative overflow-hidden pt-20 pb-10">
+     <div class="absolute top-0 right-0 opacity-5 pointer-events-none transform translate-x-1/4 -translate-y-1/4">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Academia_Naval_de_la_Rep%C3%BAblica_Dominicana_Marina_de_Guerra.svg" class="w-[600px] h-[600px]">
+     </div>
+     <div class="container mx-auto px-6 relative z-10">
+         <div class="grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-navy-800 pb-12 mb-12">
+             <div class="md:col-span-4">
+                 <h2 class="text-2xl font-serif font-bold text-white mb-2">Academia Naval</h2>
+                 <p class="text-gold-500 text-xs uppercase tracking-widest mb-6">República Dominicana</p>
+                 <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                     Comprometidos con la formación de oficiales navales de excelencia de nuestra soberanía nacional.
+                 </p>
+             </div>
+             <div class="md:col-span-4 md:col-start-9">
+                 <h4 class="text-lg font-bold mb-6">Contacto</h4>
+                 <ul class="space-y-4 text-sm text-gray-400">
+                     <li class="flex items-start gap-4"><ion-icon name="location-outline" class="text-gold-500 text-xl"></ion-icon> <span>Av. España, Sans Soucí, RD</span></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+             <p>&copy; 2026 Academia Naval. Todos los derechos reservados.</p>
+         </div>
+     </div>
   </footer>
 
-    <!-- Floating Action Buttons -->
-    <div class="fixed top-1/2 right-0 -translate-y-1/2 z-50 flex flex-col gap-2 items-end">
-        <a href="#"
-            class="group flex items-center justify-end w-12 h-12 bg-navy-900 text-white rounded-l-lg hover:bg-pink-600 hover:w-36 transition-all duration-300 shadow-lg overflow-hidden relative">
-            <span
-                class="absolute left-4 opacity-0 group-hover:opacity-100 transition-opacity font-bold whitespace-nowrap text-xs">Instagram</span>
-            <div class="w-12 h-12 flex items-center justify-center absolute right-0 min-w-[3rem]">
-                <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
-            </div>
-        </a>
-        <a href="#"
-            class="group flex items-center justify-end w-12 h-12 bg-navy-900 text-white rounded-l-lg hover:bg-blue-600 hover:w-36 transition-all duration-300 shadow-lg overflow-hidden relative">
-            <span
-                class="absolute left-4 opacity-0 group-hover:opacity-100 transition-opacity font-bold whitespace-nowrap text-xs">Facebook</span>
-            <div class="w-12 h-12 flex items-center justify-center absolute right-0 min-w-[3rem]">
-                <ion-icon name="logo-facebook" class="text-xl"></ion-icon>
-            </div>
-        </a>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    function toggleMenu() {
+        if(mobileMenu.classList.contains('hidden')){
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
+        } else {
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+        }
+    }
+    menuBtn?.addEventListener('click', toggleMenu);
+    closeBtn?.addEventListener('click', toggleMenu);
+  </script>
 </body>
-
 </html>
