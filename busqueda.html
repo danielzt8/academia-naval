@@ -66,10 +66,19 @@
         <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center gap-8">
           <a href="index.html" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Inicio</a>
-          <a href="#" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Institución</a>
+          <div class="relative group">
+            <button class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest flex items-center gap-1">
+              Institución <ion-icon name="chevron-down-outline" class="text-gold-500"></ion-icon>
+            </button>
+            <div class="absolute top-full right-0 mt-4 w-48 bg-navy-900 border border-navy-800 shadow-2xl rounded-sm py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-right">
+              <a href="404.html" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-white/5 text-xs uppercase tracking-wide">Historia</a>
+              <a href="404.html" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-white/5 text-xs uppercase tracking-wide">Misión & Visión</a>
+              <a href="404.html" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-white/5 text-xs uppercase tracking-wide">Directores</a>
+            </div>
+          </div>
           <a href="articulos.html" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Noticias</a>
           <a href="contacto.html" class="text-white text-sm font-medium hover:text-gold-500 transition-colors uppercase tracking-widest">Contacto</a>
-          <a href="#" class="px-6 py-2 bg-gradient-to-r from-gold-600 to-gold-400 text-navy-950 text-xs font-bold uppercase tracking-wider rounded-sm hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all transform hover:-translate-y-0.5">
+          <a href="404.html" class="px-6 py-2 bg-gradient-to-r from-gold-600 to-gold-400 text-navy-950 text-xs font-bold uppercase tracking-wider rounded-sm hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all transform hover:-translate-y-0.5">
             Admisiones
           </a>
         </nav>
@@ -87,7 +96,7 @@
         <ion-icon name="close-outline"></ion-icon>
       </button>
       <a href="index.html" class="text-2xl text-white font-serif hover:text-gold-500">Inicio</a>
-      <a href="#" class="text-2xl text-white font-serif hover:text-gold-500">Institución</a>
+      <a href="404.html" class="text-2xl text-white font-serif hover:text-gold-500">Institución</a>
       <a href="articulos.html" class="text-2xl text-white font-serif hover:text-gold-500">Noticias</a>
       <a href="contacto.html" class="text-2xl text-white font-serif hover:text-gold-500">Contacto</a>
     </div>
@@ -174,7 +183,7 @@
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
                             Conoce los documentos y pasos necesarios para completar tu proceso de <strong>inscripción</strong> a la Academia Naval. Fechas límites y formularios descargables.
                         </p>
-                        <a href="#" class="text-navy-900 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <a href="404.html" class="text-navy-900 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
                             Ver detalles <ion-icon name="arrow-forward"></ion-icon>
                         </a>
                      </div>
@@ -189,7 +198,7 @@
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
                             La Dirección de la Academia Naval informa que a partir de hoy quedan oficialmente abiertas las <strong>inscripciones</strong> para los aspirantes a cadetes.
                         </p>
-                        <a href="#" class="text-navy-900 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <a href="404.html" class="text-navy-900 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
                             Leer noticia <ion-icon name="arrow-forward"></ion-icon>
                         </a>
                      </div>
